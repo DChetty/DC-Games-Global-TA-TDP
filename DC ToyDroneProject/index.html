@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Metadata for character encoding, compatibility, and viewport scaling -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- PreloadJS library for handling asset preloading -->
+    <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
+    
+    <!-- Linking external stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    
+    <!-- Linking main JavaScript file, loaded as a module -->
+    <script src="script.js" type="module"></script>
+    
+    <!-- Page title -->
+    <title>ToyDrone</title>
+  </head>
+  <body>
+    <!-- Loader overlay that displays progress during asset loading -->
+    <div id="loaderOverlay">
+      <div id="progress_bar">
+        <!-- Filled portion of the progress bar -->
+        <div id="bar_percentage"></div>
+        <!-- Percentage progress displayed as text -->
+        <div id="percentage_number"></div>
+      </div>
+    </div>
+    
+    <!-- Main container for layout, styled with Flexbox -->
+    <div class="flexbox-container">
+      
+      <!-- Left section for command list display -->
+      <div class="flexbox-left">
+        <div class="commandListText"></div>
+      </div>
+      
+      <!-- Middle section containing the game board and input area -->
+      <div class="flexbox-middle">
+        <!-- Game board where the drone and other elements are rendered -->
+        <div class="board" id="board"></div>
+        
+        <!-- Input field for user commands -->
+        <input
+          class="input-field"
+          type="text"
+          name="commandlist"
+          placeholder="add input here"
+        />
+        
+        <!-- Submit button for input commands -->
+        <button class="submit-button" type="submit">Submit</button>
+      </div>
+      
+      <!-- Right section for output display -->
+      <div class="flexbox-right">
+        <div class="outputDisplay"></div>
+      </div>
+    </div>
+  </body>
+</html>

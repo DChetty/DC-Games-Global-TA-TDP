@@ -1,0 +1,340 @@
+*, :after, :before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: #fff;
+  background-image: url("pixelbg.839a3533.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  font-family: Trebuchet MS;
+}
+
+ul {
+  color: #fff;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+}
+
+.board {
+  background-image: url("board51.0768bb66.svg");
+  border: .125rem solid purple;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  width: 40vh;
+  height: 40vh;
+  margin: 10px auto;
+  display: grid;
+}
+
+.drone {
+  z-index: 1;
+  object-fit: contai;
+  background-image: url("droneNORTH.b84ae595.svg");
+  grid-row-start: 1;
+  grid-column-start: 1;
+  width: 3.5vh;
+  height: 3.5vh;
+  margin: auto;
+}
+
+.gridBox {
+  border: .125rem solid purple;
+}
+
+.drone {
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+.input-field {
+  color: #fff;
+  border: .125rem solid purple;
+  width: 50vw;
+  height: 2rem;
+  margin-top: .5rem;
+  margin-left: .9rem;
+  padding: .2rem;
+  display: inline-block;
+}
+
+.submit-button {
+  color: #fff;
+  padding: .45em;
+  position: absolute;
+  bottom: 7.5rem;
+  right: 4.6rem;
+}
+
+.flexbox-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.flexbox-left, .flexbox-middle, .flexbox-right {
+  color: #fff;
+  width: 100%;
+}
+
+.commandListText {
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.commandList__header {
+  color: #fff;
+  width: 50%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.commandList {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.outputDisplay {
+  color: #fff;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.output__header {
+  color: #fff;
+  width: 40%;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.display_output {
+  color: #fff;
+  background-color: purple;
+  width: 90vw;
+  height: 30vh;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.projectile {
+  color: #fff;
+  width: 4.5vh;
+  height: 4.5vh;
+  display: none;
+}
+
+.commandButton {
+  color: #fff;
+  background: purple;
+  border: none;
+  border-radius: 1em;
+  outline: none;
+  width: 5rem;
+  margin: .1rem .1rem .3rem;
+  padding: .5em 1em;
+  box-shadow: 0 3px 20px #4b00823b;
+}
+
+.commandButton:hover {
+  color: #333;
+  cursor: pointer;
+  background: #def2f1;
+}
+
+@media (width >= 600px) {
+  .board {
+    background-image: url("board51.0768bb66.svg");
+    border: .125rem solid purple;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    width: 68vh;
+    height: 68vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+  }
+
+  .gridBox {
+    border: .125rem solid purple;
+  }
+
+  .input-field {
+    color: #fff;
+    border: .125rem solid purple;
+    width: 29vw;
+    height: 2rem;
+    margin-top: .5rem;
+    margin-left: 2.3em;
+    padding: .2rem;
+    display: inline-block;
+  }
+
+  .submit-button {
+    color: #fff;
+    padding: .45em;
+    position: absolute;
+    bottom: 12.5rem;
+    right: 39rem;
+  }
+
+  .flexbox-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+  }
+
+  .flexbox-left {
+    color: #fff;
+    width: 25%;
+  }
+
+  .flexbox-middle {
+    color: #fff;
+    width: 39%;
+  }
+
+  .flexbox-right {
+    color: #fff;
+    width: 40%;
+  }
+
+  .commandListText {
+    color: #fff;
+    margin-top: 4rem;
+  }
+
+  .commandList__header {
+    color: #fff;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 2.25rem;
+    font-weight: bold;
+  }
+
+  .commandList {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .outputDisplay {
+    color: #fff;
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+  .output__header {
+    color: #fff;
+    width: 19%;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.25rem;
+    font-weight: bold;
+  }
+
+  .display_output {
+    color: #fff;
+    background-color: purple;
+    width: 35vw;
+    height: 30vh;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll;
+  }
+
+  .projectile {
+    color: #fff;
+    width: 6.5vh;
+    height: 6.5vh;
+    display: none;
+  }
+
+  .commandButton {
+    color: #fff;
+    background: purple;
+    border: none;
+    border-radius: 1em;
+    outline: none;
+    width: 9rem;
+    margin-bottom: .3rem;
+    padding: .5em 1em;
+    box-shadow: 0 3px 20px #4b00823b;
+  }
+
+  .commandButton:hover {
+    color: #333;
+    cursor: pointer;
+    background: #def2f1;
+  }
+
+  #progress_bar {
+    border: 1px solid #6546b3;
+    border-radius: 25px;
+    width: 50%;
+    height: 10px;
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    box-shadow: 0 0 5px 5px #4600f8;
+  }
+
+  #bar_percentage {
+    filter: progid:DXImageTransform. Microsoft. gradient(startColorstr= "#d2ff52", endColorstr= "#91e842", GradientType= 1);
+    background: linear-gradient(to right, #3ca8cb 0%, #2cb3c8 100%);
+    border-radius: 25px;
+    width: 3%;
+    height: 100%;
+    transition: width .3s ease-in-out;
+  }
+
+  #percentage_number {
+    color: #fff;
+    width: 60px;
+    margin: 10px auto;
+    font-size: 25px;
+  }
+
+  #loaderOverlay {
+    z-index: 10;
+    background-color: purple;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+/*# sourceMappingURL=index.1303bb05.css.map */

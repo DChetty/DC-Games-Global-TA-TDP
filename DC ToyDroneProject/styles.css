@@ -1,0 +1,391 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Trebuchet MS;
+  /* Set the background image */
+  background-image: url("img/pixelbg.gif"); /* Replace with the path to your background image */
+  background-size: cover; /* This makes the image cover the entire background */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the image from tiling */
+  color: white; /* Set the default font color to white */
+}
+
+/*global style*/
+
+ul {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  list-style-type: none;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  color: white;
+}
+
+.board {
+  display: grid;
+  height: 40vh; /* Adjust as needed */
+  width: 40vh;  /* Adjust as needed */
+  /*margin-right: auto; */
+  /* margin-left: auto; */
+  margin: 10px auto; /* Adjust the value as needed */
+  background-image: url("img/board51.svg");
+  border: 0.125rem solid purple;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.drone {
+  /* Size of the drone relative to each grid cell */
+  width: 3.5vh; /* Adjust as needed to fit well on the board cells */
+  height: 3.5vh; /* Adjust as needed to fit well on the board cells */
+  /* Position adjustments */
+  grid-row-start: 1; /* Default position; will be set dynamically in JS */
+  grid-column-start: 1; /* Default position; will be set dynamically in JS */
+  /* Centering within each grid cell */
+  margin: auto;
+  /* Ensure the drone image has a border for visibility */
+  /* border: 0.125rem solid purple;  Adjust as needed */
+  background-image: url("img/droneNORTH.svg");
+  /* Z-index to ensure it displays above the board */
+  z-index: 1;
+  /* Adjustments for image fit */
+  object-fit: contai
+}
+
+
+.gridBox {
+  border: 0.125rem solid purple;
+}
+
+.drone {
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+.input-field {
+  display: inline-block;
+  margin-left: 0.9rem;
+  margin-top: 0.5rem;
+  padding: 0.2rem;
+  height: 2rem;
+  width: 50vw;
+  border: 0.125rem solid purple;
+  color: white;
+}
+
+.submit-button {
+  position: absolute;
+  right: 4.6rem;
+  bottom: 7.5rem;
+  padding: 0.45em;
+  color: white;
+}
+
+
+
+/*FlexBox style*/
+
+.flexbox-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexbox-left {
+  width: 100%;
+  color: white;
+}
+
+.flexbox-middle {
+  width: 100%;
+  color: white;
+}
+
+.flexbox-right {
+  width: 100%;
+  color: white;
+}
+
+
+/*GAME INFORMATION BLOCK*/
+
+.commandListText {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  color: white;
+}
+
+.commandList__header {
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  font-weight: bold;
+  width: 50%;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.commandList {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.outputDisplay {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  color: white;
+}
+
+.output__header {
+  width: 40%;
+  font-size: 2.25rem;
+  color: white;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.display_output {
+  height: 30vh;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: white;
+  background-color: purple;
+}
+
+
+/*PROJEctile*/
+
+.projectile {
+  display: none;
+  width: 4.5vh;
+  height: 4.5vh;
+  color: white;
+}
+
+/*Button*/
+
+.commandButton {
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  width: 5rem;
+  color: white;
+  margin: 0.1rem;
+  background: purple;
+  margin-bottom: 0.3rem;
+  box-shadow: 0 3px 20px 0 #4b00823b; /* Adjusted box-shadow to match purple */
+}
+
+.commandButton:hover {
+  background: #def2f1;
+  color: #333;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .board {
+    display: grid;
+    height: 68vh;
+    width: 68vh;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: url("img/board51.svg");
+    border: 0.125rem solid purple;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .gridBox {
+    border: 0.125rem solid purple;
+  }
+
+  .input-field {
+    display: inline-block;
+    margin-left: 2.3em;
+    margin-top: 0.5rem;
+    padding: 0.2rem;
+    height: 2rem;
+    width: 29vw;
+    border: 0.125rem solid purple;
+    color: white;
+  }
+
+  .submit-button {
+    position: absolute;
+    right: 39rem;
+    bottom: 12.5rem;
+    padding: 0.45em;
+    color: white;
+  }
+
+  /* 
+  FlexBox style
+  */
+
+  .flexbox-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .flexbox-left {
+    width: 25%;
+    color: white;
+  }
+
+  .flexbox-middle {
+    width: 39%;
+    color: white;
+  }
+
+  .flexbox-right {
+    width: 40%;
+    color: white;
+  }
+
+  /* GAME INFORMATION BLOCK */
+  .commandListText {
+    margin-top: 4rem;
+    color: white;
+  }
+
+  .commandList__header {
+    font-size: 2.25rem;
+    font-weight: 500;
+    color: white;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .commandList {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  .outputDisplay {
+    width: 100%;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    color: white;
+  }
+
+  .output__header {
+    width: 19%;
+    font-size: 2.25rem;
+    color: white;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+
+  .display_output {
+    height: 30vh;
+    width: 35vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    background-color: purple;
+    color: white;
+    overflow: scroll;
+  }
+
+  .projectile {
+    display: none;
+    width: 6.5vh;
+    height: 6.5vh;
+    color: white;
+  }
+
+  /*Button */
+
+  .commandButton {
+    border: none;
+    outline: none;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    width: 9rem;
+    color: white;
+    background: purple;
+    margin-bottom: 0.3rem;
+    box-shadow: 0 3px 20px 0 #4b00823b; /* Adjusted box-shadow to match purple */
+  }
+
+  .commandButton:hover {
+    background: #def2f1;
+    color: #333;
+    cursor: pointer;
+  }
+
+  #progress_bar {
+    position: fixed;
+    top: 50%;
+    left: 25%;
+    width: 50%;
+    height: 10px;
+    border: 1px solid rgb(101, 70, 179);
+    border-radius: 25px;
+    box-shadow: 0 0 5px 5px rgb(70, 0, 248);
+  }
+
+  #bar_percentage {
+    width: 3%;
+    height: 100%;
+    border-radius: 25px;
+    transition: width 0.3s ease-in-out;
+    background: rgb(22, 181, 238);
+    background: linear-gradient(
+      to right,
+      rgb(60, 168, 203) 0%,
+      rgb(44, 179, 200) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2ff52', endColorstr='#91e842', GradientType=1);
+  }
+
+  #percentage_number {
+    margin: 10px auto;
+    font-size: 25px;
+    width: 60px;
+    color: white;
+  }
+
+  #loaderOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    z-index: 10;
+  }
+}
